@@ -268,7 +268,7 @@ class CreatePanel extends React.Component<
                     return (
                         <div>
                             Go to the backlog or a query result and select
-                            "Estimate" from the context menu
+                            &quot;Estimate&quot; from the context menu
                         </div>
                     );
                 } else {

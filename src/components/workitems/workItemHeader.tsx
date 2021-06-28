@@ -17,9 +17,8 @@ export class WorkItemHeader extends React.Component<IWorkItemHeaderProps> {
 
         // This is really fragile...
         const host = DevOps.getHost();
-        const url = `https://dev.azure.com/${
-            host.name
-        }/${project}/_workitems/edit/${id}`;
+        const url = `https://dev.azure.com/${host.name
+            }/${project}/_workitems/edit/${id}`;
 
         return (
             <div className="work-item-header">
@@ -28,6 +27,7 @@ export class WorkItemHeader extends React.Component<IWorkItemHeaderProps> {
                         className="work-item-header--info"
                         href={url}
                         target="_blank"
+                        rel="noreferrer"
                         onClick={async ev => {
                             if (
                                 !ev.ctrlKey &&

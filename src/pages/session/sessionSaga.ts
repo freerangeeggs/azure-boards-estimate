@@ -190,9 +190,9 @@ export function* sessionSaga(action: ReturnType<typeof loadSession>) {
         const a:
             | ReturnType<typeof leaveSession>
             | ReturnType<typeof endSession> = yield take([
-            leaveSession.type,
-            endSession.type
-        ]);
+                leaveSession.type,
+                endSession.type
+            ]);
 
         yield cancel(estimationTask);
         yield cancel(notificationTask);
@@ -281,7 +281,9 @@ function* sessionEstimationSaga(): SagaIterator {
                     ? workItems[idx + 1].id
                     : workItems[0].id;
             yield put(selectWorkItem(nextWorkItemId));
-        } catch (e) {}
+        } catch (e) {
+            // Do nothing
+        }
     }
 }
 
