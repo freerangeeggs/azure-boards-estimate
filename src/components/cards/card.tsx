@@ -37,7 +37,7 @@ export enum CardSize {
     medium
 }
 
-export enum CardState {}
+export enum CardState { }
 
 export interface ICardData {
     label: string;
@@ -74,6 +74,7 @@ export class Card extends React.Component<ICardComponentProps> {
             selected
         } = this.props;
 
+        // TODO: Implement this stuffy in the return function
         let BaseElement: string;
         if (onClick) {
             BaseElement = "button";
@@ -95,7 +96,7 @@ export class Card extends React.Component<ICardComponentProps> {
         };
 
         return (
-            <BaseElement
+            <button
                 className={css(
                     className,
                     onClick && "card--base-button",
@@ -134,7 +135,7 @@ export class Card extends React.Component<ICardComponentProps> {
                         </div>
                     )}
                 </div>
-            </BaseElement>
+            </button>
         );
     }
 
