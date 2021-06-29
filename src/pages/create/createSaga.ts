@@ -37,6 +37,8 @@ export function* loadTeams() {
 
     // TODO: Get source from state?
     const teamService = Services.getService<ITeamService>(TeamServiceId);
+
+    // @ts-ignore
     const teams = yield call(
         [teamService, teamService.getAllTeams],
         projectInfo.id
@@ -49,6 +51,8 @@ export function* loadCardSets() {
     const cardSetService = Services.getService<ICardSetService>(
         CardSetServiceId
     );
+
+    // @ts-ignore
     const cardSets = yield call([cardSetService, cardSetService.getSets]);
     yield put(Actions.setCardSets(cardSets));
 }
@@ -59,6 +63,8 @@ export function* iterationSaga() {
     );
 
     const teamService = Services.getService<ITeamService>(TeamServiceId);
+
+    // @ts-ignore
     const iterations = yield call(
         [teamService, teamService.getIterationsForTeam],
         action.payload
@@ -71,6 +77,7 @@ export function* createSessionSaga() {
     while (true) {
         yield take(Actions.create.type);
 
+        // @ts-ignore
         let session: ISession = yield select<IState>(x => x.create.session);
 
         // Generate new id

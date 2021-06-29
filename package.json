@@ -8,7 +8,7 @@
     "@uifabric/utilities": "^7.0.3",
     "azure-devops-extension-api": "1.152.3",
     "azure-devops-extension-sdk": "2.0.10",
-    "azure-devops-ui": "2.167.6",
+    "azure-devops-ui": "2.167.7",
     "core-js": "^3.1.4",
     "immer": "^8.0.1",
     "office-ui-fabric-react": "6.105.0",

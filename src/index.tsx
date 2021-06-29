@@ -53,9 +53,8 @@ DevOps.register("estimate-context-menu", () => {
                     "ms.vss-web.fallback-route-new-platform",
                     {
                         project: projectInfo.name,
-                        parameters: `${extensionContext.publisherId}.${
-                            extensionContext.extensionId
-                        }.estimate-hub`
+                        parameters: `${extensionContext.publisherId}.${extensionContext.extensionId
+                            }.estimate-hub`
                     }
                 );
 
@@ -83,6 +82,7 @@ if (!window.location.search || !window.location.search.trim()) {
             composeEnhancers(applyMiddleware(sagaMiddleware))
         );
 
+        // @ts-ignore
         sagaMiddleware.run(initSaga);
         sagaMiddleware.run(createSaga);
         sagaMiddleware.run(rootSettingsSaga);
